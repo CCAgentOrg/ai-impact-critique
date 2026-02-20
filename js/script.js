@@ -1,49 +1,53 @@
-// AI Impact Commons Counter-Narrative - Minimal JS
+// AI Impact Commons Counter-Narrative - UI interactions
 
 document.addEventListener('DOMContentLoaded', function() {
-  // Mobile navigation toggle
-  const nav = document.querySelector('.site-header nav');
-  const toggle = document.createElement('button');
-  toggle.textContent = '☰';
-  toggle.setAttribute('aria-label', 'Toggle navigation');
-  toggle.style.cssText = 'background:none;border:none;color:var(--text-primary);font-size:1.5rem;cursor:pointer;display:none;margin-left:auto;';
-
-  const header = document.querySelector('.site-header');
-  if (window.innerWidth <= 768) {
-    header.insertBefore(toggle, nav);
-    toggle.style.display = 'block';
-    nav.style.display = 'none';
-    nav.style.flexDirection = 'column';
-    nav.style.width = '100%';
+  // Theme toggle
+  const toggle = document.getElementById('theme-toggle');
+  const stored = localStorage.getItem('theme');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const setTheme = (dark) => {
+    document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+    toggle.textContent = dark ? '🌙' : '☀️';
+    localStorage.setItem('theme', dark ? 'dark' : 'light');
+  };
+  if (stored) {
+    setTheme(stored === 'dark');
+  } else if (prefersDark) {
+    setTheme(true);
+  } else {
+    setTheme(false);
+  }
+  if (toggle) {
+    toggle.addEventListener('click', () => {
+      const current = document.documentElement.getAttribute('data-theme') === 'dark';
+      setTheme(!current);
+    });
   }
 
-  toggle.addEventListener('click', function() {
-    if (nav.style.display === 'none' || nav.style.display === '') {
-      nav.style.display = 'flex';
-    } else {
-      nav.style.display = 'none';
-    }
-  });
-
-  // Smooth scroll for anchor links
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-      const href = this.getAttribute('href');
-      if (href !== '#') {
-        e.preventDefault();
-        const target = document.querySelector(href);
-        if (target) {
-          target.scrollIntoView({ behavior: 'smooth' });
-        }
+  // Mobile navigation toggle (for very small screens)
+  const navContainer = document.querySelector('.nav-container');
+  const nav = document.querySelector('.site-header nav');
+  if (window.innerWidth <= 480 && navContainer) {
+    const menuBtn = document.createElement('button');
+    menuBtn.textContent = '☰';
+    menuBtn.setAttribute('aria-label', 'Toggle navigation menu');
+    menuBtn.style.cssText = 'display:block;background:none;border:none;color:var(--text-primary);font-size:1.2rem;cursor:pointer;margin-left:auto;padding:0.5rem;';
+    document.querySelector('.header-inner').appendChild(menuBtn);
+    navContainer.style.display = 'none';
+    menuBtn.addEventListener('click', () => {
+      if (navContainer.style.display === 'none') {
+        navContainer.style.display = 'block';
+      } else {
+        navContainer.style.display = 'none';
       }
     });
-  });
+  }
 
-  // Update active nav link based on current page
+  // Active nav link update (already set server-side)
   const currentPage = window.location.pathname.split('/').pop() || 'index.html';
   document.querySelectorAll('.site-header nav a').forEach(link => {
     const href = link.getAttribute('href');
-    if (href === currentPage || (currentPage === '' && href === 'index.html')) {
+    if ((href === currentPage) || (currentPage === '' && href === 'index.html')) {
       link.classList.add('active');
     }
   });
