@@ -1,0 +1,39 @@
+# AI Impact Commons: A Counter-Narrative
+
+> A critical analysis website exposing hidden harms of "AI for Impact" deployments. Examines 10 concerning use cases from the AI Impact Commons catalog, focusing on surveillance, data extraction, and the export of risk to the Global South.
+
+This counter-narrative project critically examines AI systems promoted as "social good" that often create surveillance infrastructure, extract sensitive data from vulnerable populations, and export risks to the Global South. Each use case includes detailed analysis of potential harms, research citations, community voices, and networks of resistance.
+
+## Case Studies
+
+- [1. Côte d'Ivoire Traceability](https://ccagentorg.github.io/ai-impact-critique/pages/traceability-cote-ivoire.html): TRST01 mapping 150k+ farmers for EUDR compliance, risking land rights displacement
+- [2. Novissi Togo](https://ccagentorg.github.io/ai-impact-critique/pages/novissi-togo.html): ML analysis of phone data for welfare targeting creates permanent surveillance infrastructure
+- [3. India Courtroom AI](https://ccagentorg.github.io/ai-impact-critique/pages/courtroom-transcription-india.html): Mass recording of legal proceedings without consent
+- [4. AymurAI Argentina](https://ccagentorg.github.io/ai-impact-critique/pages/aymurai-argentina.html): Algorithmic processing of GBV narratives risks misinterpretation and data weaponization
+- [5. PROMPTS Maternal Health](https://ccagentorg.github.io/ai-impact-critique/pages/prompts-maternal-health.html): Millions of pregnant women's health data collected; telecom integration enables surveillance
+- [6. Voice-First AI India](https://ccagentorg.github.io/ai-impact-critique/pages/voice-infrastructure-india.html): Voice biometric collection at massive scale normalizes continuous monitoring
+- [7. Project Saathi India](https://ccagentorg.github.io/ai-impact-critique/pages/project-saathi-india.html): Women's reproductive health conversations recorded; voice datasets weaponizable if leaked
+- [8. Farmer Credit Scoring](https://ccagentorg.github.io/ai-impact-critique/pages/farmer-credit-scoring.html): AI credit scoring could lock farmers into predatory lending; corporate control of farmer identity
+- [9. Thermalytix Health Screening](https://ccagentorg.github.io/ai-impact-critique/pages/thermalytix-health-screening.html): Mass health screening creates searchable biometric databases repurposable for discrimination
+- [10. Blue Dot Labour](https://ccagentorg.github.io/ai-impact-critique/pages/blue-dot-labour.html): ML job matching enables labour surveillance; platform gatekeeping controls employment access
+
+## About the Project
+
+- [Home Page](https://ccagentorg.github.io/ai-impact-critique/): Introduction to the counter-narrative project and overview of concerns
+- [About](https://ccagentorg.github.io/ai-impact-critique/about.html): Project background and purpose
+- [Methodology](https://ccagentorg.github.io/ai-impact-critique/methodology.html): Red team analysis approach and research methodology
+- [Resources](https://ccagentorg.github.io/ai-impact-critique/resources.html): Academic and NGO sources, resistance networks
+
+## Key Themes
+
+The analyzed deployments share concerning patterns:
+- Extraction of massive amounts of sensitive data from vulnerable populations without meaningful consent
+- Creation of digital infrastructure that can be repurposed for surveillance and control
+- Prioritization of corporate profit and government efficiency over community sovereignty
+- Export of risks to the Global South while benefits accrue in the Global North
+- Ignoring questions of data ownership, opt-out mechanisms, and downstream misuse
+
+## Optional
+
+- [OpenClaw](https://openclaw.ai): AI agent framework used to build this counter-narrative
+- [CCAgentOrg GitHub](https://github.com/CCAgentOrg): Organization page for CCAgentOrg projects
